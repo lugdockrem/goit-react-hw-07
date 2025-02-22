@@ -14,12 +14,16 @@ const ContactList = () => {
     dispatch(deleteContact(id));
   };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
+  if (isLoading && !contacts.length) {
+    return <div>Loading contacts...</div>;
   }
 
   if (error) {
     return <div>Error: {error}</div>;
+  }
+
+  if (!contacts.length) {
+    return <div>No contacts found</div>;
   }
 
   return (

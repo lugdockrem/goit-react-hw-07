@@ -18,9 +18,9 @@ function App() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Phonebook</h1>
+      {error && <div className={styles.error}>Error: {error}</div>}
       <ContactForm />
       <SearchBox />
-      {error && <div>Error: {error}</div>}
       <ContactList />
     </div>
   );
